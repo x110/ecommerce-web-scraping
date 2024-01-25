@@ -12,26 +12,20 @@ This project is a web scraping tool designed to extract product information from
 
 ## Getting Started
 
-### Prerequisites
-
-- Python 3.x
-- Install required Python packages:
-
+### Clone the repository:
 ```bash
-pip install -r requirements.txt
-```
-
-### Usage
-Clone the repository:
-```bash
-git clone https://github.com/yourusername/ecommerce-web-scraping.git
+git clone git@github.com:x110/ecommerce-web-scraping.git
 ```
 
 ### Navigate to the project directory:
 ```bash
 cd ecommerce-web-scraping
 ```
-Run the scraper:
+### Install required Python packages
+```bash
+pip install -r requirements.txt
+```
+### Run the scraper:
 ```bash
 python scraper.py
 ```
