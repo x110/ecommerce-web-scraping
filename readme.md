@@ -1,5 +1,4 @@
-# Ecommerce Web Scraping Project
-
+# Ecommerce Web Scraping
 ## Overview
 
 This project is a web scraping tool designed to extract product information from an ecommerce website. It is built to scrape data from [kickscrew.com](https://ae.kickscrew.com/collections/nike) and provides a structured output in CSV format. The tool is developed in Python using the BeautifulSoup and Requests libraries for web scraping.
