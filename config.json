@@ -1,0 +1,5 @@
+{
+    "file_path": "scraped_data.json",
+    "urls_file_path": "products_urls.csv",
+    "webdriver_timeout": 10
+}
