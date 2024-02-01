@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 import re
 
+def get_element_text(element, strip=False):
+    return element.get_text(strip=strip) if element else None
+
 def find_product_info(soup):
     product_info_raw = soup.find('div', class_="pdp-product-info-container").get_text().strip().split('\n\n')
     product_info = {}
@@ -11,8 +14,9 @@ def find_product_info(soup):
 
 def find_gender(soup):
     pdp_tab_header = soup.find('div', class_='pdpTabHeader')
-    gender = pdp_tab_header.find('div', class_='pdpOptionValues').text.strip()
-    return gender
+    gender = pdp_tab_header.find('div', class_='pdpOptionValues') if pdp_tab_header else None
+    gender_text = get_element_text(gender,strip=True)
+    return gender_text
 
 def scrape_product_data(url, driver):
     driver.get(url)
