@@ -22,7 +22,7 @@ def main():
         driver = configure_driver()
         WebDriverWait(driver, webdriver_timeout) 
 
-        for url in products_urls:
+        for url in products_urls[:1]:
             product_data = scrape_product_data(url, driver)
             data.append(product_data)
 
