@@ -32,66 +32,27 @@ python main.py
 The scraped data will be saved in a file named scraped_data.json in the project directory.
 
 ``` json
-  {
-    "url": "https://ae.kickscrew.com/en/products/nike-womens-wmns-dunk-high-aluminum-dd1869-107",
-    "handle": "nike-womens-wmns-dunk-high-aluminum-dd1869-107",
-    "title": "(WMNS) Nike Dunk High 'Aluminum'  DD1869-107",
-    "body": "Dressed in a White and Aluminum color scheme. This Nike Dunk High features a White leather base, nylon tongues, and midsole paired with Aluminum Blue \u2013 not University Blue \u2013 leather and Swoosh overlays. The same light hue continues on the laces, liner, tongue labels, insole, and rubber outsole completes the design.\nSKU: DD1869-107\nRelease Date: 30 Sep 2021\nColor: White/Aluminum",
-    "type": "Skate Shoes",
+{
+    "url": "https://ae.kickscrew.com/en/products/nike-dunk-low-sb-skateboard-court-purple-bq6817-500",
+    "handle": "nike-dunk-low-sb-skateboard-court-purple-bq6817-500",
+    "title": "Nike SB Dunk Low 'Court Purple'  BQ6817-500",
+    "body": "Dressed in a Court Purple, White, and Black color scheme. This Nike SB Dunk Low comes with the Air Jordan 1\u2019s popular \u201cBlack Toe\u201d color blocking featuring a White leather base with Black overlays and Court Purple in the rear and rubber outsole.SKU: BQ6817-500Release Date: 9 Nov 2020Color: Court Purple/White/Court Purple/Black",
+    "type": "Sneakers",
     "product_info": {
-      "Model No": "DD1869-107",
-      "Release Date": "2021-08-06",
+      "Model No": "BQ6817-500",
+      "Release Date": "2024-01-27",
       "Series": "Dunk",
-      "Nickname": "Aluminum",
-      "Style": "Sports, Street Style, Trendy",
+      "Nickname": "Court Purple",
+      "Style": "Street Style",
       "Season": "All Season",
-      "Upper material": "Polyurethane/PU Leather",
+      "Upper material": "Synthetic Leather",
       "Closure": "Lacing",
       "Sole material": "Rubber Sole",
       "Toe type": "Round Toe",
       "Heel type": "Flat heel",
-      "Color way": "White/Aluminum"
-    },
-    "gender": "WOMENS"
-  },
-  {
-    "url": "https://ae.kickscrew.com/en/products/nike-sportswear-tech-fleece-cu4490-010",
-    "handle": "nike-sportswear-tech-fleece-cu4490-010",
-    "title": "Nike Sportswear NSW Tech Fleece Zipper Cardigan autumn 'Black'  CU4490-010",
-    "body": "",
-    "type": "Hoodies",
-    "product_info": {
-      "Model No": "CU4490-010",
-      "Release Date": "2022-01-26",
-      "Series": "Sportswear",
-      "Nickname": "Black",
-      "Season": "Autumn/Spring",
-      "Version": "Regular fit",
-      "Closure": "Lacing",
-      "Color way": "Black"
+      "Color way": "Black/Purple/White"
     },
     "gender": "MENS"
-  },
-  {
-    "url": "https://ae.kickscrew.com/en/products/nike-dunk-low-retro-championship-court-purple-dd1391-104",
-    "handle": "nike-dunk-low-retro-championship-court-purple-dd1391-104",
-    "title": "Nike Dunk Low 'Championship Purple'  DD1391-104",
-    "body": "The Nike Dunk Low Championship Court Purple is the perfect shoe for those looking to add a unique style to their wardrobe. Crafted with premium materials, the shoe features a classic white leather upper with Championship Purple overlays and Swooshes. The iconic Nike embroidery at the heel pays homage to the original 1985 design, keeping this throwback look true to its roots. At the base, a white and purple sole adds an eye-catching finish that pairs perfectly with your everyday looks. Whether you\u2019re hitting the streets or showing off at a special occasion, these kicks are sure to turn heads and make any outfit stand out from the rest. Get your hands on a pair today!",
-    "type": "Skate Shoes",
-    "product_info": {
-      "Model No": "DD1391-104",
-      "Release Date": "2022-05-04",
-      "Series": "Dunk",
-      "Nickname": "Championship Purple",
-      "Style": "Street Style, Trendy",
-      "Season": "All Season",
-      "Closure": "Lacing",
-      "Sole material": "Rubber Sole",
-      "Toe type": "Round Toe",
-      "Heel type": "Flat heel",
-      "Color way": "White/Court Purple/Total Orange"
-    },
-    "gender": "Mens"
   },
   ...
 
