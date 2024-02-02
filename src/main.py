@@ -30,7 +30,7 @@ def main():
 
         last_page = get_last_page_number(driver)
 
-        page_urls = [BASE_URL + "?page=" + str(i) for i in range(312, last_page + 1)]
+        page_urls = [BASE_URL + "?page=" + str(i) for i in range(1, last_page + 1)]
 
         products_urls = get_product_urls(driver, wait, page_urls)
 

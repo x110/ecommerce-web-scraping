@@ -79,11 +79,13 @@ def find_body(soup: BeautifulSoup) -> str:
     - ValueError: If the specified element is not found.
     """
     element = soup.find('div', class_="cc-tabs__tab__panel", id=re.compile("product-tab-panel3_"))
+    if element.div:
+        if "wrapper" in  element.div.get('class', []):
+            return ""
     if element:
         return element.get_text(strip=True)
     else:
         raise ValueError("Body not found.")
-
 
 def find_type(soup: BeautifulSoup) -> str:
     """

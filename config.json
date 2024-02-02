@@ -1,5 +1,5 @@
 {
     "OUTPUT_FILE_PATH": "scraped_data.json",
-    "WEBDRIVER_TIMEOUT": 5,
+    "WEBDRIVER_TIMEOUT": 3,
     "BASE_URL": "https://ae.kickscrew.com/collections/nike"
 }
