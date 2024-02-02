@@ -2,6 +2,48 @@ from typing import Optional, Dict, Union
 import re
 from selenium.webdriver.remote.webdriver import WebDriver
 from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from typing import List
+
+
+def get_last_page_number(driver: webdriver.Chrome) -> int:
+    """
+    Get the last page number from the pagination link.
+
+    Args:
+        driver (webdriver.Chrome): The Chrome WebDriver instance.
+
+    Returns:
+        int: The last page number.
+    """
+    last_page_element = driver.find_element(By.CLASS_NAME, "ais-Pagination-item--lastPage")
+    last_page_url = last_page_element.find_element(By.TAG_NAME, "a").get_attribute("href")
+    return int(last_page_url.split("page=")[-1])
+
+
+def get_product_urls(driver: webdriver.Chrome, wait, page_urls: List[str]) -> List[str]:
+    """
+    Get product URLs from multiple pages.
+
+    Args:
+        driver (webdriver.Chrome): The Chrome WebDriver instance.
+        page_urls (List[str]): List of URLs for different pages.
+
+    Returns:
+        List[str]: List of product URLs.
+    """
+    product_urls = []
+
+    for url in page_urls:
+        driver.get(url)
+        wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "ais-Hits-item")))
+        search_results = driver.find_elements(By.CLASS_NAME, "ais-Hits-item")
+        product_urls.extend([result.find_element(By.TAG_NAME, "a").get_attribute("href") for result in search_results])
+    product_urls = [url.replace(".com",'.com/en') for url in product_urls]
+    return product_urls
+
 
 def find_title(soup: BeautifulSoup) -> str:
     """
@@ -22,6 +64,7 @@ def find_title(soup: BeautifulSoup) -> str:
     else:
         raise ValueError("Title not found.")
 
+
 def find_body(soup: BeautifulSoup) -> str:
     """
     Finds and returns the text content of a specific HTML element within a BeautifulSoup object.
@@ -40,6 +83,7 @@ def find_body(soup: BeautifulSoup) -> str:
         return element.get_text(strip=True)
     else:
         raise ValueError("Body not found.")
+
 
 def find_type(soup: BeautifulSoup) -> str:
     """
@@ -60,6 +104,7 @@ def find_type(soup: BeautifulSoup) -> str:
     else:
         raise ValueError("Type not found.")
 
+
 def find_product_info(soup: BeautifulSoup) -> Optional[Dict[str, Union[str, None]]]:
     """
     Extracts product information from a BeautifulSoup object representing an HTML document.
@@ -77,6 +122,7 @@ def find_product_info(soup: BeautifulSoup) -> Optional[Dict[str, Union[str, None
         return product_info
     else:
         raise ValueError('Product info not found.')
+
 
 def find_gender(soup: BeautifulSoup) -> Optional[str]:
     """
@@ -106,6 +152,7 @@ def find_gender(soup: BeautifulSoup) -> Optional[str]:
     except ValueError as e:
         print(f"Error: {e}")
         return None
+
 
 def scrape_product_data(url: str, driver: WebDriver) -> dict:
     """
@@ -139,3 +186,14 @@ def scrape_product_data(url: str, driver: WebDriver) -> dict:
         print(f"Error scraping product data: {e}")
         return {'url': url}
 
+
+def scrape_data(driver, urls):
+    data = []
+    for url in urls:
+        try:
+            product_data = scrape_product_data(url, driver)
+            data.append(product_data)
+        except Exception as e:
+            print(f"Error scraping data from {url}: {e}")
+
+    return data
