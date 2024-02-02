@@ -1,6 +1,11 @@
 from selenium import webdriver
+from fake_useragent import UserAgent
 
 def configure_driver():
+    ua = UserAgent()
+    user_agent = ua.random
+
     options = webdriver.ChromeOptions()
-    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3")
+    options.add_argument(f"user-agent={user_agent}")
+
     return webdriver.Chrome(options=options)
